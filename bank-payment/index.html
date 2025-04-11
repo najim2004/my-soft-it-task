@@ -15,6 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap");
       body {
         background-color: #e8f4ff;
         background-image: linear-gradient(
@@ -75,10 +76,23 @@
         display: block;
         object-fit: cover;
       }
-      .company-logo {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
+      .company-avatar {
+        width: 60px;
+        height: 60px;
+      }
+
+      .company-title {
+        font-size: medium;
+        color: #666;
+      }
+
+      .company-text {
+        font-size: small;
+        color: #666;
+      }
+      .price-text {
+        font-weight: 600;
+        color: #666;
       }
       .header-bar {
         border-bottom: 1px solid #eee;
@@ -107,19 +121,26 @@
   </head>
   <body>
     <div class="py-md-5">
-      <div class="main-card mx-auto p-4" style="max-width: 700px">
+      <div class="main-card mx-auto p-4" style="max-width: 656px">
         <!-- Header with icons -->
         <div
           class="d-flex justify-content-between align-items-center p-2 px-4 border rounded-2 bg-white"
+          style="position: sticky; top: 1.5rem; z-index: 1"
         >
-          <button class="btn btn-light rounded-circle" onclick="history.back()">
+          <button
+            class="btn btn-light rounded-circle bg-transparent border-0"
+            onclick="history.back()"
+          >
             <i class="bi bi-arrow-left"></i>
           </button>
           <div>
-            <button class="btn btn-light">
-              <i class="far fa-copy"></i>
+            <button class="btn btn-light bg-transparent border-0">
+              <i class="bi bi-translate text-secondary me-2"></i>
             </button>
-            <button class="btn btn-light ms-2" onclick="history.back()">
+            <button
+              class="btn btn-light ms-2 bg-transparent border-0"
+              onclick="history.back()"
+            >
               <i class="fas fa-times"></i>
             </button>
           </div>
@@ -141,33 +162,39 @@
           </div>
 
           <!-- Payment info -->
-          <div class="row desktop-flex d-flex">
-            <!-- Company info -->
-            <div class="col-md-8">
-              <div class="card p-3 border">
-                <div class="d-flex align-items-center">
-                  <img
-                    src="../assets//logo.jpg"
-                    alt="Company Logo"
-                    class="company-logo me-3 rounded-circle border"
-                  />
-                  <div style="font-size: small">
-                    <h5 class="mb-0">Coding Centre BD</h5>
-                    <p class="mb-0 text-muted">ইনকাম আর্জিত</p>
-                    <p class="mb-0 text-muted small">SRPMmMSA98ZXAsILsVx0</p>
+          <div class="row g-3 mb-4 w-100">
+            <!-- Left Column -->
+            <div class="col-md-9">
+              <div class="border p-3 rounded h-100 bg-white">
+                <div
+                  class="d-flex align-items-center justify-content-center justify-content-md-start"
+                >
+                  <div
+                    class="me-3 border rounded-circle overflow-hidden company-avatar"
+                  >
+                    <img
+                      src="../assets/logo.jpg"
+                      alt="company Logo"
+                      class="img-fluid rounded-circle"
+                    />
+                  </div>
+                  <div>
+                    <h5 class="m-0 fw-bold company-title">Coding Centre BD</h5>
+                    <p class="m-0 text-muted company-text">ইনকাম আর্টিকেল</p>
+                    <p class="m-0 text-muted company-text">
+                      SRPMmMSA98ZXAsILsVx0
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Amount -->
-            <div class="col-md-4 amount-card">
+            <!-- Right Column -->
+            <div class="col-md-3">
               <div
-                class="card p-3 border h-100 d-flex align-items-center justify-content-center"
+                class="border p-3 rounded d-flex justify-content-md-center align-items-center h-100 bg-white"
               >
-                <div class="text-end">
-                  <span class="amount-text">৳ 300.00</span>
-                </div>
+                <h4 class="mb-0 text-center mx-auto price-text">৳ 300.00</h4>
               </div>
             </div>
           </div>
