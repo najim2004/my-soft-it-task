@@ -47,3 +47,40 @@ body {
 .tab-content.active {
   display: block;
 }
+
+.btn.active {
+  background-color: #0d6efd !important;
+  color: white !important;
+}
+
+.nav-tab.active {
+  background-color: #e9ecef !important;
+  color: #212529 !important;
+}
+
+.btn-group .btn.active {
+  background-color: #0058db !important;
+  color: white !important;
+}
+
+.main-card {
+  background-color: white;
+}
+.modal-dialog {
+  max-width: 500px !important;
+}
+@media (max-width: 768px) {
+  .main-card {
+    background-color: transparent;
+    min-height: 100vh;
+  }
+  .pay-button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .modal-dialog {
+    max-width: 400px !important;
+  }
+}

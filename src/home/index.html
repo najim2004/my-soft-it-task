@@ -16,161 +16,353 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap");
     </style>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body class="d-flex align-items-center justify-content-center">
-    <div class="container py-4">
+    <div
+      class="main-card rounded-3 p-4 mx-auto w-100 py-md-4"
+      style="max-width: 900px"
+    >
+      <!-- Navigation Bar -->
       <div
-        class="bg-white rounded-3 shadow p-4 mx-auto"
-        style="max-width: 900px"
+        class="d-flex justify-content-between align-items-center p-2 border rounded-2 mb-4 bg-white"
       >
-        <!-- Navigation Bar -->
+        <i class="bi bi-house text-secondary fs-5"></i>
+        <div>
+          <i class="bi bi-chat-square text-secondary me-2"></i>
+          <i class="bi bi-x-lg text-secondary"></i>
+        </div>
+      </div>
+
+      <!-- Logo and Company Name -->
+      <div class="d-flex flex-column flex-md-row align-items-center mb-4">
         <div
-          class="d-flex justify-content-between align-items-center p-2 border rounded-2 mb-4"
+          class="logo-container rounded-circle border d-flex align-items-center justify-content-center me-md-3 mb-3 mb-md-0 overflow-hidden"
         >
-          <i class="bi bi-house text-secondary fs-5"></i>
-          <div>
-            <i class="bi bi-chat-square text-secondary me-2"></i>
-            <i class="bi bi-x-lg text-secondary"></i>
-          </div>
+          <img
+            src="../assets/logo.jpg"
+            alt="Coding Centre BD Logo"
+            class="logo-img"
+          />
         </div>
+        <h4 class="text-secondary mb-0">Coding Centre BD</h4>
+      </div>
 
-        <!-- Logo and Company Name -->
-        <div class="d-flex align-items-center mb-4">
-          <div
-            class="logo-container rounded-circle border d-flex align-items-center justify-content-center me-3 overflow-hidden"
-          >
-            <img
-              src="../assets/logo.jpg"
-              alt="Coding Centre BD Logo"
-              class="logo-img"
-            />
-          </div>
-          <h4 class="text-secondary mb-0">Coding Centre BD</h4>
-        </div>
-
-        <!-- Navigation Tabs -->
-        <div class="d-flex justify-content-center gap-2 mb-4">
-          <a href="#" class="btn btn-light d-flex align-items-center gap-1">
-            <i class="bi bi-headphones"></i>
-            সাপোর্ট
-          </a>
-          <a href="#" class="btn btn-light d-flex align-items-center gap-1">
-            <i class="bi bi-question-circle"></i>
-            তথ্যাদি
-          </a>
-          <a href="#" class="btn btn-light d-flex align-items-center gap-1">
-            <i class="bi bi-info-circle"></i>
-            বিস্তারিত
-          </a>
-        </div>
-
-        <!-- Payment Tabs -->
-        <div class="btn-group w-100 mb-4">
-          <button class="btn btn-primary py-3 active" data-tab="mobile-banking">
-            মোবাইল ব্যাংকিং
-          </button>
-          <button class="btn btn-primary py-3" data-tab="bank-transfer">
-            ব্যাংক ট্রান্সফার
-          </button>
-        </div>
-
-        <!-- Payment Methods -->
-
-        <!-- Mobile banking tab -->
-        <div id="mobile-banking" class="tab-content active">
-          <div class="row row-cols-2 g-3 mb-4">
-            <div class="col">
-              <div
-                class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
-                style="height: 80px"
-                onclick="selectPaymentMethod(this)"
-              >
-                <img
-                  src="../assets/bkash-logo.png"
-                  alt="bKash"
-                  class="img-fluid"
-                />
-              </div>
-            </div>
-            <div class="col">
-              <div
-                class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
-                style="height: 80px"
-                onclick="selectPaymentMethod(this)"
-              >
-                <img src="../assets/nagad.png" alt="Nagad" class="img-fluid" />
-              </div>
-            </div>
-            <div class="col">
-              <div
-                class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
-                style="height: 80px"
-                onclick="selectPaymentMethod(this)"
-              >
-                <img
-                  src="../assets//rocket.png"
-                  alt="Rocket"
-                  class="img-fluid"
-                />
-              </div>
-            </div>
-            <div class="col">
-              <div
-                class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
-                style="height: 80px"
-                onclick="selectPaymentMethod(this)"
-              >
-                <img src="../assets//upay.png" alt="Upay" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bank transfer tab -->
-        <div id="bank-transfer" class="tab-content">
-          <div class="row row-cols-2 g-3 mb-4">
-            <div class="col">
-              <div
-                class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
-                style="height: 80px"
-                onclick="selectPaymentMethod(this)"
-              >
-                <img
-                  src="../assets/brac-bank.png"
-                  alt="brac-bank"
-                  class="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Support tab -->
-        <div id="bank-transfer" class="tab-content">
-          <div class="row row-cols-2 g-3 mb-4">
-            <div class="col">
-              <div
-                class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
-                style="height: 80px"
-                onclick="selectPaymentMethod(this)"
-              >
-                <img
-                  src="../assets/brac-bank.png"
-                  alt="brac-bank"
-                  class="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pay Button -->
+      <!-- Navigation Tabs -->
+      <div class="d-flex justify-content-center gap-2 mb-4">
         <button
-          class="btn w-100 py-3 fw-500 fs-5"
-          style="background-color: #d9ebff; color: #0052cc"
+          class="btn btn-light d-flex align-items-center gap-1 nav-tab"
+          data-tab="support-tab"
         >
-          Pay 300.00 BDT
+          <i class="bi bi-headphones"></i>
+          <span class="d-none d-md-inline"> সাপোর্ট</span>
         </button>
+        <button
+          class="btn btn-light d-flex align-items-center gap-1 nav-tab"
+          data-tab="information-tab"
+        >
+          <i class="bi bi-question-circle"></i>
+          <span class="d-none d-md-inline">তথ্যাদি</span>
+        </button>
+        <button
+          class="btn btn-light d-flex align-items-center gap-1 nav-tab"
+          data-tab="details-tab"
+        >
+          <i class="bi bi-info-circle"></i>
+          <span class="d-none d-md-inline">বিস্তারিত</span>
+        </button>
+      </div>
+
+      <!-- Payment Tabs -->
+      <div class="btn-group w-100 mb-4">
+        <button
+          class="btn btn-primary py-2 py-md-3 active"
+          data-tab="mobile-banking"
+        >
+          মোবাইল ব্যাংকিং
+        </button>
+        <button class="btn btn-primary py-2 py-md-3" data-tab="bank-transfer">
+          ব্যাংক ট্রান্সফার
+        </button>
+      </div>
+
+      <!-- Payment Methods -->
+
+      <!-- Mobile banking tab -->
+      <div id="mobile-banking" class="tab-content active">
+        <div class="row row-cols-2 g-3 mb-4">
+          <div class="col">
+            <div
+              class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
+              style="height: 80px"
+              onclick="openPaymentModal(this)"
+              data-payment-type="bkash"
+            >
+              <img
+                src="../assets/bkash-logo.png"
+                alt="bKash"
+                class="img-fluid"
+                style="mix-blend-mode: multiply"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
+              style="height: 80px"
+              onclick="selectPaymentMethod(this)"
+            >
+              <img
+                src="../assets/nagad.png"
+                alt="Nagad"
+                class="img-fluid"
+                style="mix-blend-mode: multiply"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
+              style="height: 80px"
+              onclick="selectPaymentMethod(this)"
+            >
+              <img
+                src="../assets//rocket.png"
+                alt="Rocket"
+                class="img-fluid"
+                style="mix-blend-mode: multiply"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
+              style="height: 80px"
+              onclick="selectPaymentMethod(this)"
+            >
+              <img
+                src="../assets//upay.png"
+                alt="Upay"
+                class="img-fluid"
+                style="mix-blend-mode: multiply"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bank transfer tab -->
+      <div id="bank-transfer" class="tab-content">
+        <div class="row row-cols-2 g-3 mb-4">
+          <div class="col">
+            <a href="../bank-payment/pay.html" class="text-decoration-none">
+              <div
+                class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
+                style="height: 80px"
+              >
+                <img
+                  src="../assets/brac-bank.png"
+                  alt="brac-bank"
+                  class="h-100 w-50 object-fit-cover"
+                  style="mix-blend-mode: multiply"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Support tab -->
+      <div id="support-tab" class="tab-content">
+        <div class="row row-cols-2 g-3 mb-4">
+          <div class="col">
+            <div
+              class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
+              style="height: 80px"
+              onclick="selectPaymentMethod(this)"
+            >
+              <div
+                class="me-3 bg-primary bg-opacity-10 text-primary rounded-circle d-flex justify-content-center align-items-center"
+                style="width: 40px; height: 40px"
+              >
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="small text-dark">
+                আমাদের সাথে সরাসরি কথা বলতে এখানে ক্লিক করুন।
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
+              style="height: 80px"
+              onclick="selectPaymentMethod(this)"
+            >
+              <div
+                class="me-3 bg-success bg-opacity-10 text-success rounded-circle d-flex justify-content-center align-items-center"
+                style="width: 40px; height: 40px"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="small text-dark">
+                হোয়াটসঅ্যাপে লাইভ চ্যাটের জন্য এখানে ক্লিক করুন।
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="payment-method border rounded-2 p-3 d-flex align-items-center justify-content-center"
+              style="height: 80px"
+              onclick="selectPaymentMethod(this)"
+            >
+              <div
+                class="me-3 bg-warning bg-opacity-10 text-warning rounded-circle d-flex justify-content-center align-items-center"
+                style="width: 40px; height: 40px"
+              >
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="small text-dark">
+                আমাদের সাপোর্ট ইমেইল করতে এখানে ক্লিক করুন।
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Information tab -->
+      <div id="information-tab" class="tab-content">
+        <div
+          class="information flex-column justify-content-center align-items-center w-100 h-100"
+        >
+          <h4 class="text-center">No Information Found</h4>
+        </div>
+      </div>
+
+      <!-- Details tab -->
+      <div id="details-tab" class="tab-content">
+        <div class="py-5">
+          <!-- Demo details 1 -->
+          <h5 class="text-center text-primary fw-semibold mb-4">
+            লেনদেনের বিস্তারিত
+          </h5>
+          <div class="border p-3 rounded">
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-muted">ইনভয়েসঃ</span>
+              <span class="text-dark">Tamima Mishu</span>
+            </div>
+
+            <hr class="my-2 border-top" />
+
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-muted">পরিমাণঃ</span>
+              <span class="text-dark">300.00 BDT</span>
+            </div>
+
+            <hr class="my-2 border-top" />
+
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-muted">মোট প্রদেয় পরিমাণঃ</span>
+              <span class="text-primary fw-semibold">300.00 BDT</span>
+            </div>
+
+            <hr class="my-2 border-top" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Pay Button -->
+      <button
+        class="btn w-100 py-3 fw-500 fs-5 pay-button"
+        style="background-color: #d9ebff; color: #0052cc"
+      >
+        Pay 300.00 BDT
+      </button>
+    </div>
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      aria-labelledby="paymentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered mx-auto text-center">
+        <div
+          class="modal-content rounded-4 border border-2 border-secondary-subtle bg-white p-4"
+        >
+          <div class="modal-body p-0 w-100">
+            <h5 class="modal-title text-secondary" id="paymentModalLabel">
+              Select Payment Option
+            </h5>
+            <hr />
+            <div class="row g-3 mt-3">
+              <!-- bKash Personal Option -->
+              <div class="col-6">
+                <a href="../mfs-payment/pay.html" class="text-decoration-none">
+                  <div class="card border rounded-4 h-100 py-3" role="button">
+                    <div
+                      class="card-body d-flex align-items-center justify-content-center"
+                    >
+                      <span class="text-secondary fs-5 me-2">bKash</span>
+                      <span class="badge rounded-pill text-bg-danger px-3"
+                        >Personal</span
+                      >
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- bKash Agent Option -->
+              <div class="col-6">
+                <a href="../mfs-payment/pay.html" class="text-decoration-none">
+                  <div class="card border rounded-4 h-100 py-3" role="button">
+                    <div
+                      class="card-body d-flex align-items-center justify-content-center"
+                    >
+                      <span class="text-secondary fs-5 me-2">bKash</span>
+                      <span class="badge rounded-pill text-bg-primary px-3"
+                        >Agent</span
+                      >
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- bKash Merchant Option -->
+              <div class="col-6">
+                <a href="../mfs-payment/pay.html" class="text-decoration-none">
+                  <div class="card border rounded-4 h-100 py-3" role="button">
+                    <div
+                      class="card-body d-flex flex-wrap align-items-center justify-content-center"
+                    >
+                      <span class="text-secondary fs-5 me-2"
+                        >bKash Merchant</span
+                      >
+                      <span class="badge rounded-pill text-bg-danger px-3"
+                        >Live</span
+                      >
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Close Button -->
+          <div class="mt-4">
+            <button
+              type="button"
+              class="btn btn-light bg-primary-subtle text-primary w-100 rounded-3"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 

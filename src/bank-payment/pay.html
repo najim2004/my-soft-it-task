@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BRAC Bank Payment</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #e8f4ff;
+        background-image: linear-gradient(
+          45deg,
+          #e8f4ff 25%,
+          #f0f8ff 25%,
+          #f0f8ff 50%,
+          #e8f4ff 50%,
+          #e8f4ff 75%,
+          #f0f8ff 75%,
+          #f0f8ff 100%
+        );
+        background-size: 40px 40px;
+        min-height: 100vh;
+        font-family: "Noto Sans Bengali", sans-serif;
+      }
+      .card {
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      .blue-section {
+        background-color: #3949ab;
+        color: white;
+        border-radius: 8px;
+        padding: 25px;
+      }
+      .submit-btn {
+        background-color: #3949ab;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        width: 100%;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .copy-btn {
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        border-radius: 4px;
+        padding: 2px 10px;
+      }
+      .yellow-text {
+        color: #ffd54f;
+        font-weight: bold;
+      }
+      .info-row {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 10px 0;
+      }
+      .logo-img {
+        width: 20%;
+        max-height: 100px;
+        margin: 0px auto;
+        display: block;
+        object-fit: cover;
+      }
+      .company-logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      .header-bar {
+        border-bottom: 1px solid #eee;
+        padding: 10px;
+      }
+      .amount-text {
+        color: #6c757d;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .main-card {
+        background-color: white;
+      }
+      @media (max-width: 768px) {
+        .desktop-flex {
+          flex-direction: column !important;
+        }
+        .amount-card {
+          margin-top: 10px;
+        }
+        .main-card {
+          background-color: transparent;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="py-md-5">
+      <div class="main-card mx-auto p-4" style="max-width: 700px">
+        <!-- Header with icons -->
+        <div
+          class="d-flex justify-content-between align-items-center p-2 px-4 border rounded-2 bg-white"
+        >
+          <button class="btn btn-light rounded-circle" onclick="history.back()">
+            <i class="bi bi-arrow-left"></i>
+          </button>
+          <div>
+            <button class="btn btn-light">
+              <i class="far fa-copy"></i>
+            </button>
+            <button class="btn btn-light ms-2" onclick="history.back()">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="card-body p-0">
+          <!-- Logo -->
+          <div
+            class="text-center overflow-hidden d-flex justify-content-center align-items-center"
+            style="max-height: 80px"
+          >
+            <img
+              src="../assets/brac-bank.png"
+              alt="BRAC Bank Logo"
+              class="logo-img"
+              style="mix-blend-mode: multiply"
+            />
+          </div>
+
+          <!-- Payment info -->
+          <div class="row desktop-flex d-flex">
+            <!-- Company info -->
+            <div class="col-md-8">
+              <div class="card p-3 border">
+                <div class="d-flex align-items-center">
+                  <img
+                    src="../assets//logo.jpg"
+                    alt="Company Logo"
+                    class="company-logo me-3 rounded-circle border"
+                  />
+                  <div style="font-size: small">
+                    <h5 class="mb-0">Coding Centre BD</h5>
+                    <p class="mb-0 text-muted">ইনকাম আর্জিত</p>
+                    <p class="mb-0 text-muted small">SRPMmMSA98ZXAsILsVx0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Amount -->
+            <div class="col-md-4 amount-card">
+              <div
+                class="card p-3 border h-100 d-flex align-items-center justify-content-center"
+              >
+                <div class="text-end">
+                  <span class="amount-text">৳ 300.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blue section -->
+          <div class="blue-section mt-4">
+            <h5 class="text-center mb-4">পেমেন্ট স্লিপ আপলোড করুন।</h5>
+
+            <!-- File upload -->
+            <div class="mb-4">
+              <div class="input-group">
+                <input
+                  type="file"
+                  class="form-control"
+                  id="fileUpload"
+                  accept="image/*,.pdf"
+                />
+              </div>
+            </div>
+
+            <!-- Bank details -->
+            <div
+              class="info-row d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <i class="fas fa-circle me-2 small"></i>
+                <span>ব্যাংকের নামঃ</span>
+                <span class="yellow-text ms-2">BRAC Bank</span>
+              </div>
+            </div>
+
+            <div
+              class="info-row d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <i class="fas fa-circle me-2 small"></i>
+                <span>একাউন্ট নামঃ</span>
+                <span class="yellow-text ms-2">MY SOFT IT</span>
+              </div>
+              <button class="copy-btn">
+                <i class="far fa-copy me-1"></i> Copy
+              </button>
+            </div>
+
+            <div
+              class="info-row d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <i class="fas fa-circle me-2 small"></i>
+                <span>একাউন্ট নম্বরঃ</span>
+                <span class="yellow-text ms-2">1532202993428001</span>
+              </div>
+              <button class="copy-btn">
+                <i class="far fa-copy me-1"></i> Copy
+              </button>
+            </div>
+
+            <div
+              class="info-row d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <i class="fas fa-circle me-2 small"></i>
+                <span>ব্রাঞ্চ নামঃ</span>
+                <span class="yellow-text ms-2">Bijoy Nagor SME</span>
+              </div>
+              <button class="copy-btn">
+                <i class="far fa-copy me-1"></i> Copy
+              </button>
+            </div>
+
+            <div
+              class="info-row d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <i class="fas fa-circle me-2 small"></i>
+                <span>রাউটিং নম্বরঃ</span>
+                <span class="yellow-text ms-2">060271103</span>
+              </div>
+              <button class="copy-btn">
+                <i class="far fa-copy me-1"></i> Copy
+              </button>
+            </div>
+
+            <div
+              class="info-row d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <i class="fas fa-circle me-2 small"></i>
+                <span>সুইফট কোডঃ</span>
+                <span class="yellow-text ms-2">BRAKBDDH</span>
+              </div>
+              <button class="copy-btn">
+                <i class="far fa-copy me-1"></i> Copy
+              </button>
+            </div>
+
+            <!-- Warning text -->
+            <div class="mt-4">
+              <p class="small">
+                <i class="fas fa-info-circle text-warning me-2"></i>
+                উপরের উল্লেখিত তথ্য অনুযায়ী আপনার ব্যাংক ট্রান্সফার সম্পন্ন
+                করুন। তারপর আপলোড বক্সে ব্যাংক স্লিপ অথবা ট্রান্সফার স্ক্রিনশট
+                আপলোড করুন এবং নিচের
+                <span class="text-warning fw-bold">SUBMIT</span> বাটনে ক্লিক
+                করুন।
+              </p>
+            </div>
+          </div>
+
+          <!-- Submit button -->
+          <div class="mt-4">
+            <button class="submit-btn">Submit Payment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/bank-pay.js"></script>
+  </body>
+</html>

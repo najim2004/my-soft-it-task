@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bKash Payment</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #e8f4ff;
+        background-image: linear-gradient(
+          45deg,
+          #e8f4ff 25%,
+          #f0f8ff 25%,
+          #f0f8ff 50%,
+          #e8f4ff 50%,
+          #e8f4ff 75%,
+          #f0f8ff 75%,
+          #f0f8ff 100%
+        );
+        background-size: 40px 40px;
+        min-height: 100vh;
+        font-family: "Noto Sans Bengali", sans-serif;
+      }
+
+      .bkash-pink {
+        background-color: #d25070;
+        color: white;
+      }
+
+      #verifyBtn:hover {
+        background-color: #d62d57;
+        color: white;
+      }
+
+      .container-wrapper {
+        max-width: 650px;
+      }
+
+      .bkash-logo {
+        max-width: 100px;
+      }
+
+      .merchant-avatar {
+        width: 60px;
+        height: 60px;
+      }
+
+      .merchant-title {
+        font-size: medium;
+        color: #666;
+      }
+
+      .merchant-text {
+        font-size: small;
+        color: #666;
+      }
+
+      .price-text {
+        font-weight: 600;
+        color: #666;
+      }
+
+      .transaction-form {
+        font-size: medium;
+      }
+
+      .bullet-point {
+        font-size: 8px;
+      }
+
+      .copy-button {
+        color: white;
+        background: rgba(0, 0, 0, 0.3);
+        font-size: small;
+      }
+
+      .highlight {
+        color: yellow;
+      }
+      .main-card {
+        background-color: white;
+      }
+      @media (max-width: 768px) {
+        .main-card {
+          background-color: transparent;
+        }
+      }
+    </style>
+  </head>
+  <body class="d-flex align-items-center justify-content-center">
+    <div class="mx-auto container-wrapper">
+      <div class="main-card shadow-sm p-4 border-0">
+        <!-- Header with icons -->
+        <div
+          class="d-flex justify-content-between align-items-center p-2 px-4 border rounded-2 bg-white"
+        >
+          <button class="btn btn-light rounded-circle" onclick="history.back()">
+            <i class="bi bi-arrow-left"></i>
+          </button>
+          <div>
+            <button class="btn btn-light">
+              <i class="far fa-copy"></i>
+            </button>
+            <button class="btn btn-light ms-2" onclick="history.back()">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- bKash Logo -->
+        <div class="text-center my-4">
+          <img
+            src="../assets/bkash-logo.png"
+            alt="bKash Logo"
+            class="bkash-logo w-100"
+          />
+        </div>
+
+        <!-- Merchant Info -->
+        <div class="row g-3 mb-4 w-100">
+          <!-- Left Column -->
+          <div class="col-md-9">
+            <div class="border p-3 rounded h-100 bg-white">
+              <div
+                class="d-flex align-items-center justify-content-center justify-content-md-start"
+              >
+                <div
+                  class="me-3 border rounded-circle overflow-hidden merchant-avatar"
+                >
+                  <img
+                    src="../assets/logo.jpg"
+                    alt="Merchant Logo"
+                    class="img-fluid rounded-circle"
+                  />
+                </div>
+                <div>
+                  <h5 class="m-0 fw-bold merchant-title">Coding Centre BD</h5>
+                  <p class="m-0 text-muted merchant-text">ইনকাম আর্টিকেল</p>
+                  <p class="m-0 text-muted merchant-text">
+                    BKYAvWMk9fnZJD7t2tlx
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-md-3">
+            <div
+              class="border p-3 rounded d-flex justify-content-md-center align-items-center h-100 bg-white"
+            >
+              <h4 class="mb-0 text-center mx-auto price-text">৳ 300.00</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction Form -->
+        <div class="bkash-pink p-4 rounded transaction-form">
+          <h5 class="text-center mb-3">ট্রানজেকশন আইডি দিন</h5>
+
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="transactionId"
+              placeholder="ট্রানজেকশন আইডি দিন"
+            />
+          </div>
+
+          <ul class="list-unstyled mb-0">
+            <li class="mb-3">
+              <i class="fas fa-circle me-2 bullet-point"></i>
+              *247# ডায়াল করে আপনার BKASH মোবাইল মেনুতে যান অথবা BKASH অ্যাপে
+              যান।
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-circle me-2 bullet-point"></i>
+              <span class="highlight">"Send Money"</span> -এ ক্লিক করুন।
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-circle me-2 bullet-point"></i>
+              প্রাপক নম্বর হিসাবে এই নম্বরটি লিখুনঃ
+              <span class="highlight" id="bkashNumber">01941698614</span>
+              <button
+                class="copy-btn ms-2 rounded-2 shadow-none border-0 px-3 py-1 copy-button"
+                id="copyNumber"
+              >
+                <i class="fas fa-copy me-2"></i>Copy
+              </button>
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-circle me-2 bullet-point"></i>
+              টাকার পরিমাণঃ <span class="fw-bold">300.00</span>
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-circle me-2 bullet-point"></i>
+              নিশ্চিত করতে এবার আপনার BKASH মোবাইল মেনু পিন দিবেন।
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-circle me-2 bullet-point"></i>
+              সবকিছু ঠিক থাকলে, আপনি BKASH থেকে একটি নিশ্চিতকরণ বার্তা পাবেন।
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-circle me-2 bullet-point"></i>
+              এখন উপরের বক্সে আপনার
+              <span class="highlight">Transaction ID</span> দিন এবং নিচের
+              <span class="highlight">VERIFY</span> বাটনে ক্লিক করুন।
+            </li>
+          </ul>
+        </div>
+
+        <!-- Verify Button -->
+        <button class="btn bkash-pink w-100 py-2 mt-4" id="verifyBtn">
+          VERIFY
+        </button>
+      </div>
+    </div>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/mfs-pay.js"></script>
+  </body>
+</html>
